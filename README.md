@@ -15,9 +15,13 @@
 - Array based (multi microphone)  
 #
 Monaural seperation을 위한 두 전통적인 방법은 Speech enhancement와 CASA이다.
-Speech enhancement는 노이즈의 일반적인 통계를 분석하고, 추정한 소음을 포함하는 음원에서 깨끗한 speech를 걸러낸다.  
-이러한 알고리즘으로 spectrum substraction이 유명하다. 이것은 추정한 노이즈의 강력한 스펙트럼이 노이즈가 낀 speech에서 빠진다.  
-이때 가정을 하나 한다. 배경 노이즈가 정적이라는 것이다. 하다못해 최소한 speech보다 정적이여야 한다.  
-CASA (computational auditory scene analysis)는 청각 장면 분석의 지각 원리에 기초한다.  
-그리고 pitch와 onset과 같은 그룹화된 큐들을 적극 이용한다.  
+Speech enhancement는 노이즈의 일반적인 통계를 분석하고, 추정한 소음을 포함하는 음원에서 깨끗한 speech를 걸러낸다.
+이러한 알고리즘으로 spectrum substraction이 유명하다. 이것은 추정한 노이즈의 강력한 스펙트럼이 노이즈가 낀 speech에서 빠진다.
+이때 가정을 하나 한다. 배경 노이즈가 정적이라는 것이다. 하다못해 최소한 speech보다 정적이여야 한다.
+CASA (computational auditory scene analysis)는 청각 장면 분석의 지각 원리에 기초한다.
+그리고 pitch와 onset과 같은 그룹화된 큐들을 적극 이용한다.
 #
+두 개 이상의 마이크가 있는 경우는 speech seperation을 위한 다른 원리를 사용한다.
+Beamforming 또는 공간 필터링이라는 방법은 적절한 배열 구성을 통해, 특정 방향에 도달하는 신호를 가속시킨다. (증폭?) 
+그렇게 함으로써 다른 방향에서 오는 간섭을 감소시킨다. 
+이러한 노이즈 감쇠의 양은 일반적으로 어레이의 간격, 크기 및 구성에 따라 달라집니다. 

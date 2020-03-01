@@ -150,3 +150,23 @@ SA 목표는 다음의 두 단계로 더 나은 성능을 보여준다. 첫 번�
 - SMM은 간섭 신호와 SNR에 민감하다. TMS는 간섭 신호와 SNR에 민감하지 않다.
 - TMS의 디테일한 매핑은 SMM의 그것보다 추정이 더 어렵다. 그리고 스펙트럼 크기의 한계가 없는 것은 추정의 오류를 확대시킨다. 
 - IRM과 SMM이 선호된다. 심층 신경망 기반 ratio masking이 지도 기반 NMF와 비지도 음성 향상보다 더 우수한 성능을 발휘한다.
+#
+## IV. 특징
+특징은 지도 학습에서 상호 보완적인 역할을 한다. 
+특징이 구분 가능하면, 학습하는 기계에 대한 의존도가 낮아진다. 반면에 강력한 학습 기계가 있다면 특징에 대한 의존도가 낮다. 
+- 초기 음성 분리 연구에서는 몇 가지 특징만을 사용하였다.
+- 후속 음성 분리 연구에서는 MFCC, GFCC, RASTA - PLP 등 더 다양한 특징들을 활용한다. 
+#
+저자는 낮은 SNR에서 음성 분리를 위하여, 광범위한 음향 특징을 조사하는 연구를 하였다. 
+특징들은 mel domain, linear prediction, gammatone domain, zero crossing, autocorrelation, medium time filtering, modulation, pitch based features 등이 있다.
+- Mel domain은 MFCC와 DSCC로 mel spectrum에 델타 연산이 적용되는 것을 제외하고 MFCC와 비슷하다. 
+- linear prediction 특징은 PLP, RASTA - PLP이다.
+- gammatone domain의 세 가지 특성은 GF, GFCC, GFMC이다.
+- 그 외 GF의 계산과, zero crossing, autocorrelation, medium time filtering, modulation domain features에 대한 이야기 
+#
+참고로 디노이징에서는 평가가 다음과 같이 수행되었다.
+비정적인 소음의 앞 절반을 훈련에 사용하고, 나머지 절반을 테스트에 사용했다. 
+그리고 일치하지 않는 완전히 새로운 소음을 테스트에 사용하였다.
+여하튼 지도 학습 기반의 음성 분리에서 특징을 추출하는 것은 중요하다. 
+또한 특징 추출을 하지 않은 원래의 파형 그대로를 사용하면, 분리 결과가 더욱 나쁘다. 
+그러나 주목할 것은 DNN은 파형 신호와 잘 맞지 않을 수도 있다. CNN, RNN 방법론은 엔드 투 엔드 모델에 잘 맞다. 

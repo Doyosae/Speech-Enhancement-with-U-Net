@@ -1,7 +1,6 @@
 # Paper
 #
-## Supervised Speech Separation Based on Deep Learning: An Overview  
-## (DeLiang Wang, Fellow, IEEE, and Jitong Chen)  
+## Supervised Speech Separation Based on Deep Learning: An Overview (DeLiang Wang, Fellow, IEEE, and Jitong Chen)  
 ### 요약  
 최근의 접근 방법은 speech separation를 supervised learning problem으로 공식화한다.  
 이렇게 지도 학습으로 푸는 것은 훈련 데이터로부터 음성, 화자, 배경 노이즈로부터 구별 가능한 패턴을 학습하는 것이다.  

@@ -1,12 +1,10 @@
-# Paper
-#
-## Supervised Speech Separation Based on Deep Learning: An Overview (DeLiang Wang, Fellow, IEEE, and Jitong Chen)  
-### 요약  
+# Supervised Speech Separation Based on Deep Learning: An Overview (DeLiang Wang, Fellow, IEEE, and Jitong Chen)  
+## 요약  
 최근의 접근 방법은 speech separation를 supervised learning problem으로 공식화한다.  
 이렇게 지도 학습으로 푸는 것은 훈련 데이터로부터 음성, 화자, 배경 노이즈로부터 구별 가능한 패턴을 학습하는 것이다.  
 음원 분리의 목표는 방해 background interference로부터 target speech를 분리하는 것이다.  
 사람은 여러 음원 소스가 섞여 있어도, 듣고 싶은 것을 잘 듣는다. 그래서 음원 분리는 곧 칵테일 문제와 같다.  
-### 개요  
+## 개요  
 어떻게 음원 분리를 잘 해낼 수 있을까?  
 그 중 한가지 방법은 50% intelligibility score를 위해 필요한 SNR 수준에서 음성 수신 임계값을 측정하는 것이다.  
 서로 다른 interference로부터 SRT 값의 차이가 매우 크게 난다. (SRT는 50% 점수를 위한 SNR 값)  
@@ -37,7 +35,7 @@ CASA의 주요 목표는 이상적인 바이너리 마스크이다. 이 마스�
 지도 학습 분리는 특히 딥 러닝의 성장으로부터 큰 혜택을 보았다. 앞으로 볼테지만 말이다. 
 지도 학습 기반 음성 분리 알고리즘은 크게 학습하는 기계, 교육하는 대상, 음향학적 특징으로 나눌 수 있다. 
 이 문서에서는 먼저 세 가지 구성 요소를 검토하고, 별도로 monural 및 array 기반 대표적인 알고리즘을 설명한다.  
-### Section II, 분류기와 학습하는 기계  
+## Section II, 분류기와 학습하는 기계  
 심층 신경망은 지난 10년간 많은 지도 학습 작업의 성능을 크게 높였다. 
 지도 학습 기반 Speech seperation을 위한 심층 신경망은 큰 이점을 가지고 왔는데, 이 논문에서는 MLP, CNN, RNN, GAN 모델들을 검토한다. 
 ... ... 라고 하지만 신경망 종류와 기초적인 내용들이라 이미 다 알고 있으므로 자세히는 패스... 
@@ -63,7 +61,7 @@ RNN은 숨겨진 단위 사이에서 연결되는 재귀 신경망이다. 피드
 #
 여하튼 우리는 이제 히든 레이어를 가진 DNN을 Speech seperation을 위한 기계로 논의한다. 
 서포트 벡터 머신이나, 믹스처 가우시안 모델 등과 같이 전통적인 머신러닝 모델들은 앞으로 논의 하지 않는다.  
-### III. 훈련 대상  
+## III. 훈련 대상  
 지도 학습 기반 음성 분리에서 학습과 일반화를 위해 적절한 훈련 대상을 찾는 것이 중요하다. 
 훈련 대상은 주로 마스킹 기반 대상과 매핑 기반 대상으로 나눈다. 
 마스킹 기반 대상은 배경 간섭으로부터 깨끗한 음성의 시간 - 주파수 관계를 설명한다. 
@@ -82,7 +80,7 @@ FA은 (False Alarm) 잘못 분류된 노이즈를 지배하는 유닛의 백분�
 음성 품질에 대해서는 ITU가 권장하는 PESQ가 표준 평가 지표이다. 
 PESQ는 음량 스펙트럼을 생성하기 위해 audiotory transform을 적용한다. 
 그리고 깨끗한 추론 신호와 분리된 신호의 음량 스펙트럼을 비교하여 -0.5에서 4.5 사이의 점수를 산출한다.  
-#### A. Ideal Binary Mask (IBM)  
+### A. Ideal Binary Mask (IBM)  
 IBM은 청각 장면 해석의 독점 할당 원리와 오디션에서의 청각적 마스킹 현상에 영감을 얻었다. 
 IBM은 노이즈가 낀 신호의 시간 - 주파수 표현에서 정의된다. (예를 들면 스펙토그램) 
 IBM은 시간 - 주파수 단위 안에서 SNR이 로컬 기준 내지 임계값보다 크면, 그 단위에 1을 할당한다.  
@@ -90,30 +88,30 @@ IBM은 청각 장애를 위해 음성의 명료성을 획기적으로 향상시�
 IBM은 모든 시간 - 주파수 유닛에 target-dominant이든 interference-dominannt이든 이름을 붙인다. 
 결과적으로 IBM의 추정은 지도 학습으로 다룰 수 있다. (타겟이냐? 간섭이냐? 문제) 
 IBM의 추정을 위해 사용되는 비용 함수는 보통 cross entorpy이다.  
-#### B. Target Binary Mask  
+### B. Target Binary Mask  
 IBM처럼, TBM은 모든 시간 - 주파수 단위를 이진 레이블로 분류한다. 
 차이점이라면 TBM은 각각의 시간 - 주파수 단위에서 목표 음성 에너지와 고정 간섭을 비교하여 레이블을 얻는다. 
 이 고정 간섭은 노이즈 형태의 음성인데, 모든 음성 신호의 평균과 일치하는 정지 신호이다. 
 (앞에서 간섭이 정지 신호여야 한다는 가정과 일치함, 모든 신호의 평균은 사실상 정지 신호?) 
 TBM 역시 음성의 명료성을 획기적으로 향상시킨다.  
-#### C. Ideal Ratio Mask  
+### C. Ideal Ratio Mask  
 각 TF 단위의 하드한 라벨링 대신, IRM은 IBM의 부드러운 버전이다. 
 이것은 TF 단위 내의 음성 에너지와 노이즈 에너지를 이용한다. 튜닝 가능한 파라미터는 리스케일링 하여 0.5로 선택한다. 
 S와 N이 상관없다는 가정 하에 IRM의 제곱근은 TF 유닛의 음성 에너지를 보존한다. 
 이 가정은 겹쳐진 노이즈에는 적합하지만, 실내 반향같이 난향성 노이즈에는 적합하지 않다. 
 제곱근이 없다면 IRM은 세기 스펙트럼에서 대상 음성의 최적의 추정기인 Winer filter와 유사하다. 
 MSE가 일반적으로 IRM 추정의 비용 함수로 쓰인다. 
-#### D. 스펙트럼 크기 마스크
+### D. 스펙트럼 크기 마스크
 스펙트럼 크기 마스크 SMM은 깨끗한 음성과 노이즈 음성의 진폭을 STFT 하는 것에서 정의된다. 
 수식 표현에서 S(t, f)와 Y(t, f)는 각각 깨끗한 음성의 스펙트럼 크기와 노이즈 음성 스펙트럼의 크기이다. 
 IRM과는 달리 SMM은 상한값이 1로 제한되지 않는다.
 분리된 음성을 얻기 위하여, 우리는 SMM 또는 이것의 추정값을 노이즈 음성의 스펙트럼 크기에 적용한다. 
 그리고 노이즈 음성의 페이즈와 분리된 음성을 재합성한다.
-#### E. 위상에 민감한 마스크  
+### E. 위상에 민감한 마스크  
 위상에 민감한 마스크, PSM은 위상의 측정을 포함해서 SMM을 확장한다. 
 여기세 세타는 TF 단위의 깨끗한 음성과 노이즈 음성의 위상 차이를 나타낸다. 
 PSM에 위상 차이를 포함하는 것은 신호 대 잡음 비를 더 높인다. 그리고 SMM 보다 더 나은 깨끗한 음성의 추정치를 산출한다. 
-#### F. 복소수 기반 IRM  
+### F. 복소수 기반 IRM  
 복소수 기반 IRM은 복소수 도메인에서의 이상적인 마스크이다. 
 앞서 이야기한 마스크와는 달리, 이것은 완벽하게 노이즈 음성으로부터 깨끗한 음성을 재구성할 수 있다. (복소수라서) 
 S, Y는 각각 깨끗한 음성과 노이즈 음성의 STFT 결과를 나타낸다. 그리고 *는 복소수 곱연산을 말한다. 
@@ -122,7 +120,7 @@ cIRM의 정의식을 보면 real Y와 imag Y가 있다. 이는 각각 노이즈 
 허수 파트는 “I” 라는 기호로 표시된다. 그리고 cIRM은 실수 성분과 허수 성분 모두 가진다. 
 또 실수 도메인에서 별도로 값을 추정할 수도 있다. 복소수 연산이기 때문에 마스크의 값은 경계가 없다. (제한이 없다.) 
 그래서 어떤 압측된 형태를 마스크 값에 적용해야 한다. 예를 들면 탄젠트 함수나 시그모이드 같이 말이다.
-#### G. Target Magnitude Spectrum
+### G. Target Magnitude Spectrum
 깨끗한 음성의 TSM, 또는 S(t, f)는 훈련 데이터에 기반한 매핑이다. 
 이러한 지도 학습 목표는 노이즈 음성으로 부터 깨끗한 음성의 크기를 추정한다. 
 Power spectrum 또는 Mel spectrum 같은 형태가 Magnitude spectrum 대신에 사용될 수 있다.
@@ -131,19 +129,19 @@ Power spectrum 또는 Mel spectrum 같은 형태가 Magnitude spectrum 대신에
 계산된 음성의 magnitude는  잡음의 위상과 조합되어 분리한 음성의 파형을 생성한다. 
 비용 함수로는 MSE가 TMS 계산에 종종 쓰인다. 
 또는 결과의 상관관계를 명시적으로 모델링하는 TMS 계산기를 위해서는 최대우도 방법이 쓰인다.
-#### H. Gammatone Frequency Target Power Spectrum
+### H. Gammatone Frequency Target Power Spectrum
 GF-TPS 이라는 방법도 있다. 이 역시 mapping - based target에 기반한다. spectrogram에서 정의된 TMS와는 달리,
 이것의 목표는 gammatone filterbank에 기반하는 cochleagram에서 정의된다.
 구체적으로는 깨끗한 음성을 위한 cochleagram 반응의 세기에 달려있다. 
 cochleagram의 역계산을 통하여 GF - TPS의 추정치는 분리한 음성 파형으로 쉽게 변환된다. 
-#### I. Signal Approximation  
+### I. Signal Approximation  
 신호 근사의 생각은 깨끗한 음성의 스펙트럼 세기와 추정된 음성과의 차이를 최소화하는 ratio maks estimator을 학습하는 것이다.
 SA(t, f)의 정의식에서 RM(t, f)는 SMM의 추정값을 말한다.
 그래서 SA는 SNR 최소화를 추구하는 ratio masking과 spectral mapping의 조합된 목표로 해석할 수 있다. 
 이와 관련된 이전의 사례는 IBM 추정치의 맥락에서 SNR를 최대화하는 목표로 한다. 
 SA 목표는 다음의 두 단계로 더 나은 성능을 보여준다. 첫 번째는 SMM을 목표로 학습하는 것이다. 
 두 번째는 손실 함수의 최소화로 학습을 미세 조정한다. 
-#### Training targets에 대한 결론
+### Training targets에 대한 결론
 다양한 훈련 대상을 고정된 deep neural network를 사용하여 동일한 입력 데이터들로 비교하였다. 
 다양한 훈련 대상을 사용하여 분리된 음성은 STOI와 PESQ 조건에서 예측된 음성 명료성과 음성 품질을 평가한다. 
 게다가, 대표적인 음성 향상 알고리즘과 지도 기반 음수가 없는 matrix factorization 알고리즘이 벤치마크로 사용된다. 

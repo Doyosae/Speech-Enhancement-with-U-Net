@@ -138,9 +138,18 @@ GF-TPS 이라는 방법도 있다. 이 역시 mapping - based target에 기반�
 구체적으로는 깨끗한 음성을 위한 cochleagram 반응의 세기에 달려있다. 
 cochleagram의 역계산을 통하여 GF - TPS의 추정치는 분리한 음성 파형으로 쉽게 변환된다. 
 #### I. Signal Approximation  
-신호 근사의 생각은 깨긋한 음성의 스펙트럼 세기와 추정된 음성과의 차이를 최소화하는 ratio maks estimator을 학습하는 것이다.
+신호 근사의 생각은 깨끗한 음성의 스펙트럼 세기와 추정된 음성과의 차이를 최소화하는 ratio maks estimator을 학습하는 것이다.
 SA(t, f)의 정의식에서 RM(t, f)는 SMM의 추정값을 말한다.
 그래서 SA는 SNR 최소화를 추구하는 ratio masking과 spectral mapping의 조합된 목표로 해석할 수 있다. 
 이와 관련된 이전의 사례는 IBM 추정치의 맥락에서 SNR를 최대화하는 목표로 한다. 
 SA 목표는 다음의 두 단계로 더 나은 성능을 보여준다. 첫 번째는 SMM을 목표로 학습하는 것이다. 
 두 번째는 손실 함수의 최소화로 학습을 미세 조정한다. 
+#### Training targets에 대한 결론
+다양한 훈련 대상을 고정된 deep neural network를 사용하여 동일한 입력 데이터들로 비교하였다. 
+다양한 훈련 대상을 사용하여 분리된 음성은 STOI와 PESQ 조건에서 예측된 음성 명료성과 음성 품질을 평가한다. 
+게다가, 대표적인 음성 향상 알고리즘과 지도 기반 음수가 없는 matrix factorization 알고리즘이 벤치마크로 사용된다. 
+- 최근 연구는 masking이 오직 높은 SNR에서만 유리하고 낮은 SNR에서는 mapping이 더 큰 장점을 가지는 것을 보여주었지만, 여전히 masking based targets이 mapping based targets을 능가한다.
+- 음성 품질 관점에서는 ratio masking이 binary masking보다 더 성능이 우수하다.
+- SMM은 간섭 신호와 SNR에 민감하다. TMS는 간섭 신호와 SNR에 민감하지 않다.
+- TMS의 디테일한 매핑은 SMM의 그것보다 추정이 더 어렵다. 그리고 스펙트럼 크기의 한계가 없는 것은 추정의 오류를 확대시킨다. 
+- IRM과 SMM이 선호된다. 심층 신경망 기반 ratio masking이 지도 기반 NMF와 비지도 음성 향상보다 더 우수한 성능을 발휘한다.

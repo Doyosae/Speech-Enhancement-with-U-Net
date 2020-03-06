@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[88]:
-
-
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -19,7 +13,7 @@ from tensorflow.keras.optimizers import *
 import tensorflow.keras.backend as K
 
 
-class model():
+class enhancement():
     
     def __init__ (self, trainSize = 720, testSize = 210, inputSize = 256):
         
@@ -73,7 +67,7 @@ class model():
         print("trainSound resize  : ", np.shape(self.trainSound))
         print("testSound resize   : ", np.shape(self.testSound))
 
-    def train(self):
+    def model(self):
         """
         self.filter1 = 32
         self.filter2 = 64
@@ -87,19 +81,12 @@ class model():
         self.paddingValid = "valid"
         self.paddingSame = "same"
         """
-        
-        def rmse(y_true, y_pred):
-
-            output = tf.sqrt (2 * tf.nn.l2_loss(y_true - y_pred)) / self.batch_size
-
-            return output
-    
-        asd = Input(shape = (self.inputSize, self.inputSize, 1))
+        inputs = Input(shape = (self.inputSize, self.inputSize, 1))
         output = Conv2D(self.filter1, 
                      kernel_size = self.kernel_size, 
                      strides = self.strides,
                      padding = self.paddingSame,
-                     activation = None)(asd)
+                     activation = None)(inputs)
         output = BatchNormalization()(output)
         output = tf.nn.leaky_relu(output)
         output = Conv2D(self.filter2, 
@@ -194,24 +181,8 @@ class model():
         output = BatchNormalization()(output)
         output = tf.nn.leaky_relu(output)
 
-        model = Model (inputs = asd, outputs = output)
-
-        model.compile(optimizer = Adam(lr = self.learning_rate, 
-                                        beta_1 = self.beta_1, 
-                                        beta_2 = 0.999, 
-                                        epsilon = None, 
-                                        decay = 0.0, 
-                                        amsgrad = False),
-                                        loss = 'mean_squared_error', metrics = [rmse])
+        model = Model (inputs = inputs, outputs = output)
         model.summary()
-        model.fit(x = self.trainSound,
-                y = self.trainLabel,
-                batch_size = self.batch_size,
-                epochs = self.epochs,
-                verbose = 1,
-                callbacks = None,
-                shuffle = True,
-                validation_data = (self.testSound, self.testLabel))
 
         """
         self.batch_size = 60
@@ -221,7 +192,31 @@ class model():
         """
         return model
     
+    def train(self):
+        
+        def rmse(y_true, y_pred):
+            output = tf.sqrt (2 * tf.nn.l2_loss(y_true - y_pred)) / self.batch_size
+            return output
+    
+        model = self.model()
+        model.compile(optimizer = Adam(lr = self.learning_rate, 
+                                            beta_1 = self.beta_1, 
+                                            beta_2 = 0.999, 
+                                            epsilon = None, 
+                                            decay = 0.0, 
+                                            amsgrad = False),
+                                            loss = 'mean_squared_error', metrics = [rmse])
+        model.fit(x = self.trainSound,
+                    y = self.trainLabel,
+                    batch_size = self.batch_size,
+                    epochs = self.epochs,
+                    verbose = 1,
+                    callbacks = None,
+                    shuffle = True,
+                    validation_data = (self.testSound, self.testLabel))
+        
+        return model
+    
 if __name__ == '__main__':
-    M = model()
+    M = enhancement()
     M.train()
-

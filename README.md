@@ -1,10 +1,10 @@
 # Speech Enhancement (Coming soon)
 ## Datasets  
-[noizeus](https://ecs.utdallas.edu/loizou/speech/noizeus/)
-[MS-SNND](https://github.com/microsoft/MS-SNSD)
+- [noizeus](https://ecs.utdallas.edu/loizou/speech/noizeus/)  
+- [MS-SNND](https://github.com/microsoft/MS-SNSD)
 ## Paper review  
 - [Supervised Speech Separation Based on Deep Learning: An Overview](https://github.com/Doyosae/Speech_Enhancement/blob/master/paper/01.md)  
-- [Scaling Speech Enhancement in Unseen Environments with Noise Embeddings](https://github.com/Doyosae/Speech_Enhancement/blob/master/paper/02.md)
+- [Scaling Speech Enhancement in Unseen Environments with Noise Embeddings](https://github.com/Doyosae/Speech_Enhancement/blob/master/paper/02.md)  
 - Coming soon!
 ## 01, First Speech Enhancement  
 ### 세팅

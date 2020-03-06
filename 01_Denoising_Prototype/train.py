@@ -66,7 +66,22 @@ class enhancement():
         print("testLabel resize   : ", np.shape(self.testLabel))
         print("trainSound resize  : ", np.shape(self.trainSound))
         print("testSound resize   : ", np.shape(self.testSound))
-
+        
+        
+    def get_data(self):
+        
+        out1 = self.trainLabel
+        out2 = self.testLabel
+        out3 = self.trainSound
+        out4 = self.testSound
+        
+        print ("\n\n")
+        print ("returning seqeunce is trianLabel, testLabel, trainSound, testSound")
+        print ("\n\n")
+        
+        return out1, out2, out3, out4
+    
+    
     def model(self):
         """
         self.filter1 = 32
@@ -75,7 +90,6 @@ class enhancement():
         self.filter4 = 256
         self.filter5 = 512
         self.filter6 = 1024
-
         self.kernel_size = (3, 3)
         self.strides = (2, 2)
         self.paddingValid = "valid"
@@ -191,6 +205,7 @@ class enhancement():
         self.beta_1 = 0.5
         """
         return model
+    
     
     def train(self):
         

@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
-
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -48,4 +42,3 @@ def test(noise_value = 1.):
     
 if __name__ == '__main__':
     test()
-

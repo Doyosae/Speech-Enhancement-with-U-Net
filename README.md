@@ -5,7 +5,8 @@
 ## Paper review  
 - [Supervised Speech Separation Based on Deep Learning: An Overview](https://github.com/Doyosae/Speech_Enhancement/blob/master/paper/01.md)  
 - [Scaling Speech Enhancement in Unseen Environments with Noise Embeddings](https://github.com/Doyosae/Speech_Enhancement/blob/master/paper/02.md)  
-- Coming soon!
+- [End-to-End Model for Speech Enhancement by Consistent Spectrogram Masking](https://github.com/Doyosae/Speech_Enhancement/blob/master/paper/03.md)
+- Coming Soon !
 ## 01. First Speech Enhancement  
 ### 세팅
 - 데이터셋은 noizeus, 0dB, 5dB, 10dB, 15dB의 SNR로 구성

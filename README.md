@@ -1,4 +1,9 @@
 # Speech Enhancement (Coming soon)
+## Requirement
+- Python 3.7.4
+- numpy 1.18.1
+- librosa 0.7.2
+- Tensorflow 2.1.0
 ## Datasets  
 - [noizeus](https://ecs.utdallas.edu/loizou/speech/noizeus/)  
 - [MS-SNND](https://github.com/microsoft/MS-SNSD)

@@ -85,7 +85,7 @@
 ### Model test
 ![test](https://github.com/Doyosae/Speech_Enhancement/blob/master/01_Enhancement_Example/images/result.png)
 #
-평가 데이터보다 낮은 dB의 훈련 데이터로 학습한 모델은, 평가 데이터에 대해 더 나은 enhancement를 보이지 못했다.
+Autoencoder 모델에서 낮은 SNR로 학습한 모델은 높은 SNR에 대해서 일반화를 하지 못하였다.
 #
 #
 ## 02 Speech Enhancement

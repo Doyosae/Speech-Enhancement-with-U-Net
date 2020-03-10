@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[3]:
-
-
 from train import *
 from utility import *
 from dataload import *
@@ -43,4 +37,3 @@ if __name__ == '__main__':
 #     test  = librosa.core.istft(estimated_test_Speech[0])
 #     librosa.output.write_wav("./result/estimated_train.wav", train, sr = 16000, norm=False)
 #     librosa.output.write_wav("./result/estimated_test.wav", test, sr = 16000, norm=False)
-

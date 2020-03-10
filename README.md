@@ -19,55 +19,55 @@
 ├── result/
 ├── save/
 ├── clean/
-        sp01.wav
-        sp01.wav
-        sp01.wav
-        ...
-        ...
-        sp30.wav
+|        sp01.wav
+|        sp01.wav
+|        sp01.wav
+|        ...
+|        ...
+|        sp30.wav
 ├── test/
-        sp01_airport_sn15.wav
-        sp01_babble_sn15.wav
-        sp01_airport_sn15.wav
-        ...
-        ...
-        sp01_street_sn15.wav
+|        sp01_airport_sn15.wav
+|        sp01_babble_sn15.wav
+|        sp01_airport_sn15.wav
+|        ...
+|        ...
+|        sp01_street_sn15.wav
 ├── train/
-        sp01_airport_sn0.wav
-        sp01_airport_sn5.wav
-        sp01_airport_sn10.wav
-        ...
-        ...
-        sp01_train_sn10.wav
+|        sp01_airport_sn0.wav
+|        sp01_airport_sn5.wav
+|        sp01_airport_sn10.wav
+|        ...
+|        ...
+|        sp01_train_sn10.wav
 ├── dataload.py
-        class dataLoader
-                def __init__
-                def createLabel
-                def createTrain
-                def createTest
-                def callData
-        class fixedLength(dataLoader)
-                def slicingData
-                def callData
+|        class dataLoader
+|                def __init__
+|                def createLabel
+|                def createTrain
+|                def createTest
+|                def callData
+|        class fixedLength(dataLoader)
+|                def slicingData
+|                def callData
 ├── processing.py
-        class dataProcessing
-                def __init__
-                def stft 
-                def melspectrogram
-                def mfcc
+|        class dataProcessing
+|                def __init__
+|                def stft 
+|                def melspectrogram
+|                def mfcc
 ├── train.py
-        class enhancement
-                def __init__
-                def get_data 
-                def model
-                def train
-                        def rmse
+|        class enhancement
+|                def __init__
+|                def get_data 
+|                def model
+|                def train
+|                        def rmse
 ├── test.py
-        arc = enhancement()
-        model = arc.model()
-        model.load_weights("speech_enhancement.h5")
-        trainLabel, testLabel, trainSound, testSound = arc.get_data()
-        def test
+|        arc = enhancement()
+|        model = arc.model()
+|        model.load_weights("speech_enhancement.h5")
+|        trainLabel, testLabel, trainSound, testSound = arc.get_data()
+|        def test
 ```
 ### 세팅
 - 데이터셋은 noizeus, 0dB, 5dB, 10dB, 15dB의 SNR로 구성

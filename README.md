@@ -113,7 +113,7 @@
 - 낮은 dB에서는 매핑 기반의 Autoencoder 모델이 마스킹 기반보다 더 나은 성능을 보임
 - Cross Entropy가 더 나은 성능을 보일 것으로 예상했으나 MSE하고 사실상 차이를 보이지 않음
 - 그 어느 모델에서든 음성이 갈라지는 결과를 보임 (무슨 이유인지 수치적으로, 이론적으로 더 공부해야 할 필요)
-- 모델의 출력을 bianry mask가 아니라 speech에 binary mask를 씌워서 estimated speech의 손실값  
+- 모델의 출력을 binary mask가 아니라 speech에 binary mask를 씌워서 estimated speech의 손실값  
   자체를 계산하는 것도 시도를 하였으나, 이 테스트의 결과는 매우 나빠서 앞으로의 고려사항에 넣지 않았다.
 - Overview 논문에서 이야기하는 그럼에도 불구하고 마스킹 기반이 매핑 기반보다 우월하다는 말이 무슨 뜻일까?
 ### 수행할 실험

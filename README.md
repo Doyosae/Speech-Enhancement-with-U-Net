@@ -80,10 +80,10 @@
 - 전처리한 데이터의 출력 크기가 (257, 265)여서, 모델의 편의를 위해 (256, 256) 사이즈로 잘라내었다.
 - batch size = 60, epochs = 300
 - Adam (lr = 0.00015, beta_1 = 0.5)
-### Spectogram dof train datasets
+### Spectogram of train datasets
 ![train](https://github.com/Doyosae/Speech_Enhancement/blob/master/01_Enhancement_Example/images/train.png)
-### Model test
-![test](https://github.com/Doyosae/Speech_Enhancement/blob/master/01_Enhancement_Example/images/result.png)
+### 모델의 훈련 결과
+![test](https://github.com/Doyosae/Speech_Enhancement/blob/master/01_Enhancement_Example/images/result_2.png)
 #
 Autoencoder 모델에서 낮은 SNR로 학습한 모델은 높은 SNR에 대해서 일반화를 하지 못하였다.
 #
@@ -98,11 +98,14 @@ Autoencoder 모델에서 낮은 SNR로 학습한 모델은 높은 SNR에 대해�
 - 결과 비교는 테스트 샘플의 estimated IBM와 테스트 샘플에 대응하는 IBM을 hadamard product를 수행하여 비교
 ### 예상
 - 모델이 소음이 낀 음성을 입력으로 받으면, 최적의 바이너리 마스크를 추정할 수 있을까?
+- 전처리한 데이터의 출력 크기가 (257, 265)여서, 모델의 편의를 위해 (256, 256) 사이즈로 잘라내었다.
+- batch size = 60, epochs = 50
+- Adam (lr = 0.00015, beta_1 = 0.5)
 ### Ideal Binary Mask
 ![M1](https://github.com/Doyosae/Speech_Enhancement/blob/master/02_Enhancement_Example/images/IBMtrain.png)
 ![M2](https://github.com/Doyosae/Speech_Enhancement/blob/master/02_Enhancement_Example/images/IBMTest.png)
 - 훈련에서는 train IBM을 target으로 사용하고, 학습하는 동안 모델의 validation 체크로 test IBM을 target으로 사용
-### 훈련 데이터
+### Spectogram dof train datasets
 ![train](https://github.com/Doyosae/Speech_Enhancement/blob/master/02_Enhancement_Example/images/train.png)
 ### 모델의 훈련 결과
 ![MSE](https://github.com/Doyosae/Speech_Enhancement/blob/master/02_Enhancement_Example/images/result.png)
@@ -111,3 +114,4 @@ Autoencoder 모델에서 낮은 SNR로 학습한 모델은 높은 SNR에 대해�
 - TF 도메인에서 autoencoder보다 더 나은 개선을 보임
 - Cross Entropy가 더 나은 성능을 보일줄 알았으나 MSE하고 거의 차이를 보이지 않음
 - 그 어느 모델에서든 음절이 갈라지는 결과를 보임 (무슨 이유인지 수치적으로, 이론적으로 더 공부해야...)
+- 모델의 출력을 bianry mask가 아니라 speech에 binary mask를 씌워서 estimated speech의 손실을 계산하는 것

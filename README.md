@@ -95,7 +95,7 @@ Autoencoder 모델에서 낮은 SNR로 학습한 모델은 높은 SNR에 대해�
 - 모델 자체가 노이즈를 커버할 수 있는 Binary Mask를 학습, 그래서 결과물은 estimated ideal binary mask
 - train data와 clean data로 계산한 SNR와 criteria로 label of ideal binary mask를 생성
 - 그래서 입력한 데이터에 대해 모델이 산출한 esimated ideal binary mask와 대응하는 label of ideal binary mask를 비교
-- 이 둘의 MSE를 손실함수로 사용
+- 이 둘의 Cross Entropy를 손실함수로 사용
 - 결과 비교는 테스트 샘플의 estimated IBM와 테스트 샘플에 대응하는 IBM을 hadamard product를 수행하여 비교
 ### 예상
 - 모델이 소음이 낀 음성을 입력으로 받으면, 최적의 바이너리 마스크를 추정할 수 있을까?

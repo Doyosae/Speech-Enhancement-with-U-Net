@@ -85,33 +85,39 @@
 ### 모델의 훈련 결과
 ![test](https://github.com/Doyosae/Speech_Enhancement/blob/master/01_Enhancement_Example/images/result_2.png)
 #
-Autoencoder 모델에서 낮은 SNR로 학습한 모델은 높은 SNR에 대해서 일반화를 하지 못하였다.
-#
 #
 ## 02 ~ 03 Speech Enhancement
 ### 세팅
 - 01번이랑 모델 구조는 동일, 오버피팅을 막기 위해 Fully Connected Layer를 0.3 드롭아웃
 - 모델 자체가 binary mask를 산출하도록 학습, 그래서 결과물은 estimated ideal binary mask
-- train data와 clean data로 계산한 SNR을 각각 이용하여 label of ideal binary mask를 생성
-- 그래서 입력한 데이터에 대해 모델이 산출한 esimated ideal binary mask와 대응하는 label of ideal binary mask를 비교
-- 이 둘의 MSE와 Cross Entropy에 대하여 모델 테스트
-- 결과 비교는 테스트 샘플의 estimated IBM와 테스트 샘플에 대응하는 IBM을 hadamard product를 수행하여 비교
+- train data와 clean data로 계산한 SNR을 이용하여 train data의 train target ideal binary mask를 생성
+- 입력한 데이터에 대하여 모델이 산출한 esimated ideal binary mask와 그에 대응하는 target ideal binary mask를 비교
+- 이 둘의 손실함수는 MSE와 Cross Entropy에 대하여 모델 테스트 (논문에서는 주로 Cross Entropy를 사용한다고 언급)
+- 결과 비교는 테스트 샘플의 estimated IBM와 테스트 샘플에 대응하는 label IBM을 hadamard product를 수행하여 비교
 ### 예상
 - 모델이 소음이 낀 음성을 입력으로 받으면, 최적의 바이너리 마스크를 추정할 수 있을까?
 - 전처리한 데이터의 출력 크기가 (257, 265)여서, 모델의 편의를 위해 (256, 256) 사이즈로 잘라내었다.
-- batch size = 60, epochs = 50
-- Adam (lr = 0.00015, beta_1 = 0.5)
+- batch size = 60, epochs = 50, Adam (lr = 0.00015, beta_1 = 0.5)
 ### Ideal Binary Mask
 ![M1](https://github.com/Doyosae/Speech_Enhancement/blob/master/02_Enhancement_Example/images/IBMtrain.png)
 ![M2](https://github.com/Doyosae/Speech_Enhancement/blob/master/02_Enhancement_Example/images/IBMTest.png)
-- 훈련에서는 train IBM을 target으로 사용하고, 학습하는 동안 모델의 validation 체크로 test IBM을 target으로 사용
-### Spectogram dof train datasets
+- 훈련에서는 train IBM을 target으로 사용하고, 학습하는 동안 모델의 validation 검증으로 test IBM을 target으로 사용
+### Spectogram of train datasets
 ![train](https://github.com/Doyosae/Speech_Enhancement/blob/master/02_Enhancement_Example/images/train.png)
 ### 모델의 훈련 결과
 ![MSE](https://github.com/Doyosae/Speech_Enhancement/blob/master/02_Enhancement_Example/images/result.png)
 ![BCE](https://github.com/Doyosae/Speech_Enhancement/blob/master/03_Enhancement_Example/images/result.png)
 ### 결론
-- TF 도메인에서 autoencoder보다 더 나은 개선을 보임
-- Cross Entropy가 더 나은 성능을 보일줄 알았으나 MSE하고 거의 차이를 보이지 않음
-- 그 어느 모델에서든 음절이 갈라지는 결과를 보임 (무슨 이유인지 수치적으로, 이론적으로 더 공부해야...)
-- 모델의 출력을 bianry mask가 아니라 speech에 binary mask를 씌워서 estimated speech의 손실을 계산하는 것
+- 낮은 dB에서는 매핑 기반의 Autoencoder 모델이 더 나은 마스킹 기반보다 더 나은 성능을 보임
+- Cross Entropy가 더 나은 성능을 보일 것으로 예상했으나 MSE하고 사실상 차이를 보이지 않음
+- 그 어느 모델에서든 음절이 갈라지는 결과를 보임 (무슨 이유인지 수치적으로, 이론적으로 더 공부해야 할 필요)
+- 모델의 출력을 bianry mask가 아니라 speech에 binary mask를 씌워서 estimated speech의 손실을 자체를
+  계산하는 것도 시도를 하였으나, 이 테스트의 결과는 매우 나빠서 앞으로의 고려사항에 넣지 않았다.
+- Overview 논문에서 이야기하는 그럼에도 불구하고 마스킹 기반이 매핑 기반보다 우월하다는 말이 무슨 뜻일까?
+### 수행할 실험
+- 마스킹을 추정하는 TF 도메인에서의 마스킹 기반 모델에서 여러 종류의 마스킹을 구현하여 비교해볼 것
+- U Net이 마스킹 기반 이미지 Segmentation의 대표적인 모델이다. 이를 응용할 수 있는 방법은?
+- 높은 dB에서 낮은 dB를 enhancement하는 것은 어렵지 않다. 0dB 내외로 enhancement하는 방법을 생각
+- 마지막으로 여러가지 하이퍼 파라미터를 찾는 전략과 적절한 모델 설계에 대한 고민
+- 마지막으로 여러가지 하이퍼 파라미터를 찾는 전략과 적절한 모델 ㅇ 대한 고민대한 
+- 마지막으로 여러가지 하이퍼 파라미터를 찾는 전략과 적절한 모델 ㅇ 대한 고민

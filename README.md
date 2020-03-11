@@ -88,14 +88,13 @@
 Autoencoder 모델에서 낮은 SNR로 학습한 모델은 높은 SNR에 대해서 일반화를 하지 못하였다.
 #
 #
-## 02 Speech Enhancement
+## 02 ~ 03 Speech Enhancement
 ### 세팅
-- 기본적으로 01번이랑 모델 구조는 동일
-- 오버피팅을 막기 위해 Fully Connected Layer를 0.3 드롭아웃
-- 모델 자체가 노이즈를 커버할 수 있는 Binary Mask를 학습, 그래서 결과물은 estimated ideal binary mask
-- train data와 clean data로 계산한 SNR와 criteria로 label of ideal binary mask를 생성
+- 01번이랑 모델 구조는 동일, 오버피팅을 막기 위해 Fully Connected Layer를 0.3 드롭아웃
+- 모델 자체가 binary mask를 산출하도록 학습, 그래서 결과물은 estimated ideal binary mask
+- train data와 clean data로 계산한 SNR을 각각 이용하여 label of ideal binary mask를 생성
 - 그래서 입력한 데이터에 대해 모델이 산출한 esimated ideal binary mask와 대응하는 label of ideal binary mask를 비교
-- 이 둘의 Cross Entropy를 손실함수로 사용
+- 이 둘의 MSE와 Cross Entropy에 대하여 모델 테스트
 - 결과 비교는 테스트 샘플의 estimated IBM와 테스트 샘플에 대응하는 IBM을 hadamard product를 수행하여 비교
 ### 예상
 - 모델이 소음이 낀 음성을 입력으로 받으면, 최적의 바이너리 마스크를 추정할 수 있을까?
@@ -106,4 +105,9 @@ Autoencoder 모델에서 낮은 SNR로 학습한 모델은 높은 SNR에 대해�
 ### 훈련 데이터
 ![train](https://github.com/Doyosae/Speech_Enhancement/blob/master/02_Enhancement_Example/images/train.png)
 ### 모델의 훈련 결과
-![test](https://github.com/Doyosae/Speech_Enhancement/blob/master/02_Enhancement_Example/images/result.png)
+![MSE](https://github.com/Doyosae/Speech_Enhancement/blob/master/02_Enhancement_Example/images/result.png)
+![BCE](https://github.com/Doyosae/Speech_Enhancement/blob/master/03_Enhancement_Example/images/result.png)
+### 결론
+- TF 도메인에서 autoencoder보다 더 나은 개선을 보임
+- Cross Entropy가 더 나은 성능을 보일줄 알았으나 MSE하고 거의 차이를 보이지 않음
+- 그 어느 모델에서든 음절이 갈라지는 결과를 보임 (무슨 이유인지 수치적으로, 이론적으로 더 공부해야...)

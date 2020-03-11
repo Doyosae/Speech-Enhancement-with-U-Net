@@ -69,13 +69,15 @@
 |        def test
 ```
 ## 01 Speech Enhancement  
+### 목적
+- 동일한 모델에서 깨끗한 음성의 스펙트럼을 표현하는 매핑 기반 모델과, 
+  SNR 값을 기반으로 한 마스킹 기반 모델의 Speech Enhancement 결과를 비교
+- 여러가지 마스크를 활용한 마스킹 기반의 모델의 Speech Enhancement 방법론 이해
 ### 세팅
 - 데이터셋은 noizeus, 0dB, 5dB, 10dB, 15dB의 SNR로 구성
 - 총 930개의 노이즈 음성 데이터 중에서 0dB ~ 10dB 720개는 훈련 데이터, 15dB 210개는 테스트 데이터로 사용
-- 데이터 전처리는 Short-time Fourier transform (librosa의 메서드 이용)
-- 모델 구조는 Autoencoder, 손실 함수는 MSE, 평가 메트릭은 RMSE
-### 예상
-- 낮은 dB의 데이터로 학습하면 비교적 선명한 높은 dB의 새로운 데이터에 대해서도 잘 개선하지 않을까?
+- 데이터 전처리는 Short-time Fourier transform을 적용하고 TF 도메인 기반 (librosa의 메서드 이용)
+- 모델 구조는 Autoencoder, 손실 함수는 MSE, 평가 메트릭은 RMSE (평가 메트릭을 변경할 필요 있음)
 ### 학습
 - 전처리한 데이터의 출력 크기가 (257, 265)여서, 모델의 편의를 위해 (256, 256) 사이즈로 잘라내었다.
 - batch size = 60, epochs = 300

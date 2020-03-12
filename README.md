@@ -76,7 +76,7 @@
 ### 세팅
 - 데이터셋은 noizeus, 0dB, 5dB, 10dB, 15dB의 SNR로 구성
 - 총 930개의 노이즈 음성 데이터 중에서 0dB, 5dB, 10dB 720개는 훈련 데이터, 15dB 210개는 테스트 데이터로 사용
-- 데이터 전처리는 Short-time Fourier transform을 적용하고 TF 도메인 기반 (librosa의 메서드 이용)
+- 데이터 전처리는 Short-Time Fourier transform을 적용하고 TF 도메인 기반 (librosa의 메서드 이용)
 - 모델 구조는 Autoencoder, 손실 함수는 MSE, 평가 메트릭은 RMSE (평가 메트릭을 변경할 필요 있음)
 ### 학습
 - 전처리한 데이터의 출력 크기가 (257, 265)여서, 모델의 편의를 위해 (256, 256) 사이즈로 잘라내었다.
@@ -96,6 +96,7 @@
 - 입력한 데이터에 대하여 모델이 산출한 esimated ideal binary mask와 그에 대응하는 target ideal binary mask를 비교
 - 이 둘의 손실함수는 MSE와 Cross Entropy에 대하여 모델 테스트 (논문에서는 주로 Cross Entropy를 사용한다고 언급)
 - 결과 비교는 테스트 샘플의 estimated IBM와 테스트 샘플에 대응하는 label IBM을 hadamard product를 수행하여 비교
+- 02는 Leaky ReLU와 MSE, 03은 ReLU와 MSE 그리고 ReLU와 Binary Cross Entropy 저장 파일이 있다.
 ### 예상
 - 모델이 소음이 낀 음성을 입력으로 받으면, 최적의 바이너리 마스크를 추정할 수 있을까?
 - 전처리한 데이터의 출력 크기가 (257, 265)여서, 모델의 편의를 위해 (256, 256) 사이즈로 잘라내었다.
@@ -112,12 +113,7 @@
 ### 결론
 - 낮은 dB에서는 매핑 기반의 Autoencoder 모델이 마스킹 기반보다 더 나은 성능을 보임
 - Cross Entropy가 더 나은 성능을 보일 것으로 예상했으나 MSE하고 사실상 차이를 보이지 않음
-- 그 어느 모델에서든 음성이 갈라지는 결과를 보임 (무슨 이유인지 수치적으로, 이론적으로 더 공부해야 할 필요)
-- 모델의 출력을 binary mask가 아니라 speech에 binary mask를 씌워서 estimated speech의 손실값  
+- 그 어느 모델에서든 음성이 갈라지는 결과를 보임 (무슨 이유인지 생각하고 앞으로 개선해나가야 함)
+- 모델의 출력을 binary mask가 아니라, 먼저 speech에 binary mask를 씌워서 estimated speech의 손실값  
   자체를 계산하는 것도 시도를 하였으나, 이 테스트의 결과는 매우 나빠서 앞으로의 고려사항에 넣지 않았다.
 - Overview 논문에서 이야기하는 그럼에도 불구하고 마스킹 기반이 매핑 기반보다 우월하다는 말이 무슨 뜻일까?
-### 수행할 실험
-- 마스킹을 추정하는 TF 도메인에서의 마스킹 기반 모델에서 여러 종류의 마스킹을 구현하여 비교해볼 것
-- U Net이 마스킹 기반 이미지 Segmentation의 대표적인 모델이다. 이를 응용할 수 있는 방법은?
-- 높은 dB에서 낮은 dB를 enhancement하는 것은 어렵지 않다. 0dB 내외로 enhancement하는 방법을 생각
-- 마지막으로 여러가지 하이퍼 파라미터를 찾는 전략과 적절한 모델 설계에 대한 고민

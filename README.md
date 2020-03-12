@@ -68,11 +68,12 @@
 |        trainLabel, testLabel, trainSound, testSound = arc.get_data()
 |        def test
 ```
-## 01 Speech Enhancement  
-### 목적
+## 목적
 - 동일한 모델에서 깨끗한 음성의 스펙트럼을 표현하는 매핑 기반 모델과,  
   SNR 값을 기반으로 한 마스킹 기반 모델의 Speech Enhancement 결과를 비교
 - 여러가지 마스크를 활용한 마스킹 기반의 모델의 Speech Enhancement 방법론 이해
+- 01 ~ 03 모든 파일 공유 https://drive.google.com/file/d/11x9cVIdkQ4R5FGkjXvrvjb0yo5np-zDV/view?usp=sharing
+## 01 Speech Enhancement  
 ### 세팅
 - 데이터셋은 noizeus, 0dB, 5dB, 10dB, 15dB의 SNR로 구성
 - 총 930개의 노이즈 음성 데이터 중에서 0dB, 5dB, 10dB 720개는 훈련 데이터, 15dB 210개는 테스트 데이터로 사용

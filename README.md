@@ -12,6 +12,8 @@
 - [Scaling Speech Enhancement in Unseen Environments with Noise Embeddings](https://github.com/Doyosae/Speech_Enhancement/blob/master/paper/02.md)  
 - [End-to-End Model for Speech Enhancement by Consistent Spectrogram Masking](https://github.com/Doyosae/Speech_Enhancement/blob/master/paper/03.md)
 - [Towards Generalized Speech Enhancement with Generative Adversarial Networks](https://github.com/Doyosae/Speech_Enhancement/blob/master/paper/04.md)
+- [Deep Speech Enhancement for Reverberated and Noisy Signals using Wide Residual Networks](https://github.com/Doyosae/Speech_Enhancement/blob/master/paper/05.md)
+- Coooooming Soooon
 ## 01 ~ 03 폴더 구조
 ```
 01_Speech_Enhancement

@@ -165,7 +165,7 @@ class TrainUnet ():
         def bce_dice_loss(y_true, y_pred):
             return tf.keras.losses.binary_crossentropy(y_true, y_pred) + dice_loss(y_true, y_pred)
         
-        model = self.model((super().self.image_width, self.image_height, 1))
+        model = self.model((self.image_width, self.image_height, 1))
         model.compile(optimizer = Adam(lr = self.learning_rate, 
                         beta_1 = self.decay_prop, 
                         beta_2 = 0.999, 

@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[18]:
-
-
 import tensorflow as tf
 from tensorflow.keras import *
 from tensorflow.keras.layers import *
@@ -100,4 +94,3 @@ if __name__ == '__main__':
     test = Test()
     show = test.show()
     save = test.iSTFT()
-

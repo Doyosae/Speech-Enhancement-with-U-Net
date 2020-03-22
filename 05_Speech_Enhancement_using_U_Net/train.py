@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
 import tensorflow as tf
 from tensorflow.keras import *
 from tensorflow.keras.layers import *
@@ -228,4 +222,3 @@ class TrainUnet ():
         
 if __name__ == '__main__':
     test = TrainUnet().train()
-

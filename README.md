@@ -70,11 +70,6 @@
 |        trainLabel, testLabel, trainSound, testSound = arc.get_data()
 |        def test
 ```
-## 04 ~ 
-### 3월 30일 해야할 일
-- sr = 16000이 아니라 sr = 8000 (수정하였음, spectoshow는 (256, 128)이고 log 스케일을 깸) 
-- sigmoid 제거해서 실험 (수정하였음)
-- IRM, IBM 사용하여 비교해보기
 ## 목적
 - 동일한 모델에서 깨끗한 음성의 스펙트럼을 표현하는 매핑 기반 모델과,  
   SNR 값을 기반으로 한 마스킹 기반 모델의 Speech Enhancement 결과를 비교

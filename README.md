@@ -70,6 +70,8 @@
 |        trainLabel, testLabel, trainSound, testSound = arc.get_data()
 |        def test
 ```
+## 해야할 것
+sr = 8000, n_fft = 256에서 모든 모델 
 ## 목적
 - 동일한 모델에서 깨끗한 음성의 스펙트럼을 표현하는 매핑 기반 모델과,  
   SNR 값을 기반으로 한 마스킹 기반 모델의 Speech Enhancement 결과를 비교

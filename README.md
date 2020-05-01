@@ -5,8 +5,8 @@
 - librosa 0.7.2
 - Tensorflow 2.1.0
 ## Datasets  
-- [noizeus](https://ecs.utdallas.edu/loizou/speech/noizeus/)  
 - [MS-SNND](https://github.com/microsoft/MS-SNSD)
+- 소속 연구실 데이터 (데이터는 비공개)
 ## Paper review  
 - [Supervised Speech Separation Based on Deep Learning: An Overview](https://github.com/Doyosae/Speech_Enhancement/blob/master/paper/01.md)  
 - [Scaling Speech Enhancement in Unseen Environments with Noise Embeddings](https://github.com/Doyosae/Speech_Enhancement/blob/master/paper/02.md)  

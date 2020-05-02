@@ -71,14 +71,6 @@
 |        def test
 ```
 ## 해야할 것
-sampling_rate = 7000, n_fft = 256, hop_length = 128에서 모델의 기본 옵션  
-train data 660, test data 60의 11:1 split  
-autoencoder  
-U Net (only real value parts, binary mask, ratio mask, phase conserving)  
-binary mask threshold = 0.5  
-ratio mask beta = 0.5  
-보여줄 데이터 (첫 5개 인덱스에 대해서)  
-훈련, 검증, 훈련의 IBM, 훈련의 IRM, 훈련과 개선과 검증  
 ## 목적
 - 동일한 모델에서 깨끗한 음성의 스펙트럼을 표현하는 매핑 기반 모델과,  
   SNR 값을 기반으로 한 마스킹 기반 모델의 Speech Enhancement 결과를 비교

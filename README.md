@@ -16,17 +16,8 @@
 - 소속 연구실 데이터 (데이터는 비공개)
 ## 4. Datasets folder
 ## 5. Task
-- 동일한 모델에서 깨끗한 음성의 스펙트럼을 표현하는 매핑 기반 모델과,  
-  SNR 값을 기반으로 한 마스킹 기반 모델의 Speech Enhancement 결과를 비교
-- 여러가지 마스크를 활용한 마스킹 기반의 모델의 Speech Enhancement 방법론 이해
-- 01 ~ 03 모든 파일 공유 https://drive.google.com/file/d/11x9cVIdkQ4R5FGkjXvrvjb0yo5np-zDV/view?usp=sharing
 ### Setting
-- 데이터 전처리는 Short-Time Fourier transform을 적용하고 TF 도메인 기반 (librosa의 메서드 이용)
-- 모델 구조는 Autoencoder, 손실 함수는 MSE, 평가 메트릭은 RMSE (평가 메트릭을 변경할 필요 있음)
 ### 학습
-- 전처리한 데이터의 출력 크기가 (257, 265)여서, 모델의 편의를 위해 (256, 256) 사이즈로 잘라내었다.
-- batch size = 60, epochs = 60
-- Adam (lr = 0.00015, beta_1 = 0.5)
 ### Spectogram of train datasets
 ![train](https://github.com/Doyosae/Speech_Enhancement/blob/master/01_Enhancement_Example/images/train.png)
 ### 모델의 훈련 결과

@@ -15,6 +15,7 @@
 - [MS-SNND](https://github.com/microsoft/MS-SNSD)
 - 소속 연구실 데이터 (데이터는 비공개)
 ## 4. Folder
+'''
 ├─Datasets
 │  │  README.md
 │  ├─MS_SNDN
@@ -26,5 +27,6 @@
 │  │      test_noisy.npy
 │  │      train_clean.npy
 │  │      train_noisy.npy
+'''
 ## 5. Sample
 ![Test Wave](https://github.com/Doyosae/Speech_Enhancement/blob/master/sample/test_wave.png)

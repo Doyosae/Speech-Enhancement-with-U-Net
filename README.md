@@ -35,15 +35,19 @@ Speech Enhancement is performed in and out of SNR -5 dB.
 │  │      train_noisy.npy
 ```
 ## 5. Sample
----
 ### Noisy wave, Clean wave
+---
 ![Test Wave](https://github.com/Doyosae/Speech_Enhancement/blob/master/sample/test_wave.png)
+  
 ### Noisy spectogram, Ratio mask, Clean spectogram
 ---
 ![Test Spectogram and ratio mask](https://github.com/Doyosae/Speech_Enhancement/blob/master/sample/test_spectogram.png)
+  
 ### Noisy spectogram, Ratio mask, Clean spectogram
 ---
 ![Test Spectogram and ratio mask](https://github.com/Doyosae/Speech_Enhancement/blob/master/sample/test_spectogram.png)
+  
 ### Noisy spectogram, Predict ratio mask, Enhancement spectogram
 ---
 ![Test Spectogram and ratio mask](https://github.com/Doyosae/Speech_Enhancement/blob/master/sample/enhancement_specogram.png)
+  

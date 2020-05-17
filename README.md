@@ -43,7 +43,7 @@ Speech Enhancement is performed in and out of SNR -5 dB.
 ---
 ![Test Spectogram and ratio mask](https://github.com/Doyosae/Speech_Enhancement/blob/master/sample/test_spectogram.png)
   
-### Noisy spectogram, Predict ratio mask, Enhancement spectogram
+### Noisy spectogram, Enhancement spectrogram, Clean spectogram
 ---
 ![Test Spectogram and ratio mask](https://github.com/Doyosae/Speech_Enhancement/blob/master/sample/enhancement_specogram.png)
   

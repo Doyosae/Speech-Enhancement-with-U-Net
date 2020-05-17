@@ -2,7 +2,7 @@
 ## 0. Introduction  
 Deep learning models for Speech Enhancement were made using U Net.  
 Assume that the model will deduce a good mask.  
-Speech Enhancement performed STFT and trained on multiple scales.  
+Speech Enhancement performed STFT and trained on multiple scales. (Absolute of Complex Value or log scale abs(Complex))  
 Ratio mask makes proportion mask and targets model.  
 Speech Enhancement is performed in and out of SNR -5 dB. 
 ## 1. Paper review  
@@ -47,6 +47,6 @@ Speech Enhancement is performed in and out of SNR -5 dB.
 ---
 ![Test Spectogram and ratio mask](https://github.com/Doyosae/Speech_Enhancement/blob/master/sample/enhancement_specogram.png)
   
-### Enhancement Noisy Wave, Enhancement Clean Wave
+### Enhancement Noisy Wave, Clean Wave
 ---
 ![Test Spectogram and ratio mask](https://github.com/Doyosae/Speech_Enhancement/blob/master/sample/istft_save.png)

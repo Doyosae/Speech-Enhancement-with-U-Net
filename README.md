@@ -18,8 +18,8 @@ Speech Enhancement is performed in and out of SNR -5 dB.
 - librosa 0.7.2
 - Tensorflow 2.1.0
 ## 3. Datasets  
-- [MS-SNND](https://github.com/microsoft/MS-SNSD)
-- Data from lab (data is private)
+- Speech : CSTR VCTK Corpus
+- Noise  : DEMAND datasets
 ## 4. Folder
 ```
 ├─Datasets

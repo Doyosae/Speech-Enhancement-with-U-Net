@@ -18,8 +18,8 @@ Speech Enhancement is performed in and out of SNR -5 dB.
 - librosa 0.7.2
 - Tensorflow 2.1.0
 ## 3. Datasets  
-- Speech : CSTR VCTK Corpus
-- Noise  : DEMAND datasets
+- Speech : CSTR VCTK Corpus (16KHz)
+- Noise  : DEMAND datasets  (16KHz)
 ## 4. Folder
 ```
 ├─Datasets

@@ -1,4 +1,4 @@
-# Speech Enhancement (진행 중)
+# Speech Enhancement
 ## 0. Introduction  
 Deep learning models for Speech Enhancement were made using U Net.  
 Assume that the model will deduce a good mask.  

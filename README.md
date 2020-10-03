@@ -1,5 +1,6 @@
 # Audio Theory
 - [x] [Transform Coding of Audio Signals Using Perceptual Noise Criteria](https://ieeexplore.ieee.org/document/608/)
+- [x] [Acoustic Noise Suppression for Speech Signals using Auditory Masking Effects](http://www-mmsp.ece.mcgill.ca/MMSP/Theses/2001/ThiemannT2001.pdf)
 # Speech Separation
 - [x] [Supervised Speech Separation Based on Deep Learning: An Overview](https://arxiv.org/abs/1708.07524)  
 - [x] [Wave UNet: A Multi-Scale Neural Network For End-To-End Audio Source Separation](https://arxiv.org/abs/1806.03185)  

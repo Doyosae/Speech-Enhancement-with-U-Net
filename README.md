@@ -1,4 +1,4 @@
-# Audio Theory
+# Auditory Theory
 - [x] [Transform Coding of Audio Signals Using Perceptual Noise Criteria](https://ieeexplore.ieee.org/document/608/)
 - [x] [Acoustic Noise Suppression for Speech Signals using Auditory Masking Effects](http://www-mmsp.ece.mcgill.ca/MMSP/Theses/2001/ThiemannT2001.pdf)
 # Speech Separation
@@ -29,5 +29,5 @@
 - [ ] [Wavenet: A Generatvie Model For Rae Audio](https://arxiv.org/abs/1609.03499)  
 - [ ] [Towards Generalized Speech Enhancement with Generative Adversarial Networks](https://arxiv.org/abs/1904.03418)
 - [ ] [Generative Speech Enhancement Based On Closed Networks](https://arxiv.org/abs/1909.04776)
-# ETC
+# etc
 - [x] [The INTERSPEECH 2020 Deep Noise Suppression Challenge: Datasets, Subjective Speech Quality and Testing Framework](https://arxiv.org/abs/2001.08662)

@@ -11,6 +11,8 @@
 | Singing Voice Separation With Dep UNet Convolutional Network |  | [Link](https://ejhumphrey.com/assets/pdf/jansson2017singing.pdf) |
 | Conv-TasNet: Surpassing Ideal Time-Frequency Magnitude Masking for Speech Separation |  | [Link](https://arxiv.org/abs/1809.07454) |
 # Speech Enhancement & Dereverberation
+| Paper | Date | Link | 
+|:----|:----:|:----:|
 | Speech Enhancement Based on Audible Noise Suppression |  | [Link](https://ieeexplore.ieee.org/document/641296) |
 | Multiple-Target Deep Learning For LSTM-RNN Based Speech Enhancment |  | [Link](https://ieeexplore.ieee.org/document/7895577) |
 | Time-Frequency Masking Based Online Speech Enhancement with Multi-Channel Data Using Convolutional Neural Networks |  | [Link](https://ieeexplore.ieee.org/document/8521346) |
@@ -30,8 +32,12 @@
 | Phase-aware Single-stage Speech Denoising and Dereverberation with U-Net |  | [Link](https://arxiv.org/abs/2006.00687) |
 | DCCRN: Deep Complex Convolution Recurrent Network for Phase-Aware Speech Enhancement |  | [Link](https://arxiv.org/abs/2008.00264) |
 # Speech Generatvie
+| Paper | Date | Link | 
+|:----|:----:|:----:|
 | Wavenet: A Generatvie Model For Rae Audio |  | [Link](https://arxiv.org/abs/1609.03499) |
 | Towards Generalized Speech Enhancement with Generative Adversarial Networks |  | [Link](https://arxiv.org/abs/1904.03418) |
 | Generative Speech Enhancement Based On Closed Networks |  | [Link](https://arxiv.org/abs/1909.04776) |
 # Challenge
+| Paper | Date | Link | 
+|:----|:----:|:----:|
 | The INTERSPEECH 2020 Deep Noise Suppression Challenge: Datasets, Subjective Speech Quality and Testing Framework |  | [Link](https://arxiv.org/abs/2001.08662) |

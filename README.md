@@ -1,18 +1,14 @@
-# Auditory Theory
-| Paper | Date | Link | 
+# Audio & Acoustics
+| Courses | 
 |:----|:----:|:----:|
 | Transform Coding of Audio Signals Using Perceptual Noise Criteria |  | [Link](https://ieeexplore.ieee.org/document/608/) | 
 | Acoustic Noise Suppression for Speech Signals using Auditory Masking Effects |  | [Link](http://www-mmsp.ece.mcgill.ca/MMSP/Theses/2001/ThiemannT2001.pdf) |
-# Speech Separation
-| Paper | Date | Link | 
-|:----|:----:|:----:|
+| Speech Separation | 
 | Supervised Speech Separation Based on Deep Learning: An Overview |  | [Link](https://arxiv.org/abs/1708.07524) |
 | Wave UNet: A Multi-Scale Neural Network For End-To-End Audio Source Separation |  | [Link](https://arxiv.org/abs/1806.03185) |
 | Singing Voice Separation With Dep UNet Convolutional Network |  | [Link](https://ejhumphrey.com/assets/pdf/jansson2017singing.pdf) |
 | Conv-TasNet: Surpassing Ideal Time-Frequency Magnitude Masking for Speech Separation |  | [Link](https://arxiv.org/abs/1809.07454) |
-# Speech Enhancement & Dereverberation
-| Paper | Date | Link | 
-|:----|:----:|:----:|
+| Speech Enhancement & Dereverberation |
 | Speech Enhancement Based on Audible Noise Suppression |  | [Link](https://ieeexplore.ieee.org/document/641296) |
 | Multiple-Target Deep Learning For LSTM-RNN Based Speech Enhancment |  | [Link](https://ieeexplore.ieee.org/document/7895577) |
 | Time-Frequency Masking Based Online Speech Enhancement with Multi-Channel Data Using Convolutional Neural Networks |  | [Link](https://ieeexplore.ieee.org/document/8521346) |
@@ -31,13 +27,9 @@
 | Channel-Attention Dense UNet For Multichannel Speech Enhancement |  | [Link](https://arxiv.org/abs/2001.11542) |
 | Phase-aware Single-stage Speech Denoising and Dereverberation with U-Net |  | [Link](https://arxiv.org/abs/2006.00687) |
 | DCCRN: Deep Complex Convolution Recurrent Network for Phase-Aware Speech Enhancement |  | [Link](https://arxiv.org/abs/2008.00264) |
-# Speech Generatvie
-| Paper | Date | Link | 
-|:----|:----:|:----:|
+| Speech Generatvie, Synthesis |
 | Wavenet: A Generatvie Model For Rae Audio |  | [Link](https://arxiv.org/abs/1609.03499) |
 | Towards Generalized Speech Enhancement with Generative Adversarial Networks |  | [Link](https://arxiv.org/abs/1904.03418) |
 | Generative Speech Enhancement Based On Closed Networks |  | [Link](https://arxiv.org/abs/1909.04776) |
-# Challenge
-| Paper | Date | Link | 
-|:----|:----:|:----:|
+| Challenge |
 | The INTERSPEECH 2020 Deep Noise Suppression Challenge: Datasets, Subjective Speech Quality and Testing Framework |  | [Link](https://arxiv.org/abs/2001.08662) |
